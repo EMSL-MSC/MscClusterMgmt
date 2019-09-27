@@ -12,7 +12,7 @@ The configuration for the netbooted images are stored in the `/custom/netboot/ce
 ## Image Hierarchy
 In order to reduce the complexity and inconsistency between the images that are run in Cascade, we have started using a hierarchy of profiles. Each of the profiles inherits from the base profile and/or from the aux profile. The current profile structure is below.
 
-```mermaid
+<img src='https://g.gravizo.com/svg?
 graph RL;
     aux-->base(base);
     mgmt-->aux(aux);
@@ -22,7 +22,7 @@ graph RL;
     service-->base;
     compute-->base;
     cuda-->compute;
-```
+'/>
 
 ## Modifying an image
 
