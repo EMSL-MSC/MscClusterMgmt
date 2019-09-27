@@ -19,7 +19,7 @@ In order to reduce the complexity and inconsistency between the images that are 
 ### Installing Packages
 Make sure the package is available in the site repostiries. Once it is, add it to the package list that is associated with the profile that is most appropriate within the image hierarchy, and commit that change to the git repository. Making a comment about why it is being added is helpful (i.e. ticket number, issue number, requested by someone, etc.).
 
-After it has been added to the package list, the image needs to be [rebuilt and deployed](#building-deploying-an-image).
+After it has been added to the package list, the image needs to be [rebuilt and deployed](#building--deploying-an-image).
 
 ### Copying Files
 We use syncfiles to copy files into the osimages. Syncfiles does not follow the profile hierarchy specified above. It will require another refactor in order to get them cleaned up and added. Until that time, all images that need files added to them need to be specified in their appropriate synclist. 
@@ -28,7 +28,7 @@ To sync a file into an image, it first needs to be made available on the directo
 
 Once the file is available on the director, add an entry to the appropriate profile synclist file. It needs to include the full path on the director, so if the file was installed in the git repository, you need to make sure to include `/install/custom/` before the file.
 
-Once the entry is in place, [rebuild the image](#building-deploying-an-image). Syncfiles happen at the end of the image build process and during system boot in the postscripts, so they will not be available during package install, postinstall, or if you are inspecting the image manually.
+Once the entry is in place, [rebuild the image](#building--deploying-an-image). Syncfiles happen at the end of the image build process and during system boot in the postscripts, so they will not be available during package install, postinstall, or if you are inspecting the image manually.
 
 ### Scripting Changes
 If more complicated changes are needed, either a postinstall script or a postscript can be used. Each different type executes in a different environment at a different time.
